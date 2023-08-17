@@ -16,44 +16,45 @@ double fact(int x)
     }
 int main()
 {
-    int choice, num1 , num2, restart , calc  ; 
+    int choice, restart , calc  ; 
+    double num1 , num2 ;
     restart = 0 ;
     while( restart == 0)
     {
-    cout << "Hello , Welcome to Varad's calculator. " << endl ;
+    cout << "Hello , Welcome to Varad's calculator." << endl ;
     cout << "Please enter your choice of operation to be performed: "<< endl << "1 - Addition" << endl << "2 - Subtraction" << endl << "3 - Multiplication" << endl <<"4 - Division" <<endl << "5 - Exponentation" << endl << "6 - Basic Trigonometric Funtions" << endl ;
     cin >> choice ;
         
         if ( choice == 1 )
     {
         cout << "Operation to be performed is addition." << endl; 
-        cout << " Enter the two numbers : " << endl ; 
+        cout << "Enter the two numbers : " << endl ; 
         cin >> num1 >> num2 ;
-        cout << "The addition of" << num1 << "and" << num2 << "is : " << num1 + num2 << endl ;
+        cout << "The addition of " << num1 << " and " << num2 << " is : " << num1 + num2 << endl ;
     }
     else if(choice == 2)
     {
         cout << "Operation to be performed is subtraction." << endl; 
         cout << " Enter the number from which we have to subtract: " << endl ; 
         cin >> num1  ;
-        cout << " Enter the number to be subtracted  : " << endl ; 
+        cout << " Enter the number to be subtracted : " << endl ; 
         cin >> num2  ;
-        cout << num1 << " - "<< num2 << " = " << num1 - num2 ;       
+        cout << num1 << " - "<< num2 << " = " << num1 - num2 << endl ;       
     }
     else if(choice == 3)
     {
         cout << "Operation to be performed is multiplication." << endl; 
         cout << " Enter the two numbers : " << endl ; 
         cin >> num1 >> num2 ;
-        cout << "The product of" << num1 << "and" << num2 << "is : " << num1 * num2 << endl ;    
+        cout << "The product of " << num1 << " and " << num2 << " is : " << num1 * num2 << endl ;    
     }
     else if(choice == 4)
     {
-        int res;
+        double res;
         cout << "Operation to be performed is division." << endl; 
-        cout << " Enter the numerator: " << endl ; 
+        cout << "Enter the numerator: " << endl ; 
         cin >> num1  ;
-        cout << " Enter the denominator : " << endl ; 
+        cout << "Enter the denominator : " << endl ; 
         cin >> num2  ;
         res = num1 / num2 ;
         cout << num1 << " divided by "<< num2 << " = " << res << endl ; 
@@ -111,29 +112,30 @@ int main()
             else if( choice2 == 3)
             {
                 double sine , cosine ;
-                //if(deg == 90)
-                
-                for(int i= 1; i < 1000 ; i+=4)
+                if(deg == 90)
+                    cout << "The tangent of " << deg << " is not defined.";
+                else 
                 {
+                    for(int i= 1; i < 1000 ; i+=4)
+                    {
                     sine += expon(rad ,i ) / fact (i);
-                }
-                for(int i= 3; i < 1000 ; i+=4)
-                {
+                    }
+                    for(int i= 3; i < 1000 ; i+=4)
+                    {
                     sine -= expon(rad ,i ) / fact (i);
-                }
-                cosine = 1 ; 
-                for(int i= 4; i < 1000 ; i+=4)
-                {
+                    }
+                    cosine = 1 ; 
+                    for(int i= 4; i < 1000 ; i+=4)
+                    {
                     cosine += expon(rad ,i ) / fact (i);
-                }
-                for(int i= 2; i < 1000 ; i+=4)
-                {
+                    }
+                    for(int i= 2; i < 1000 ; i+=4)
+                    {
                     cosine -= expon(rad ,i ) / fact (i);
+                    }      
+                    double tn = sine / cosine ;
+                    cout << "The tangent of "<< deg << " is :" << tn << endl ;
                 }
-                double tn = sine / cosine ;
-                cout << sine << " " << cosine ;
-                cout << "The tangent of "<< deg << "is :" << tn << endl ;
-
             }
             else 
             {
@@ -151,8 +153,6 @@ int main()
     else 
     {restart ++ ;
     cout << " Thank you !" << endl ;
-    }}
+    }
+    }
 }
-    
-    
-     
