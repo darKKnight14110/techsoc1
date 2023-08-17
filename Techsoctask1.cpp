@@ -35,7 +35,7 @@ int main()
     else if(choice == 2)
     {
         cout << "Operation to be performed is subtraction." << endl; 
-        cout << " Enter the number from which we have to subtract: " << endl ; 
+        cout << "Enter the number from which we have to subtract: " << endl ; 
         cin >> num1  ;
         cout << "Enter the number to be subtracted : " << endl ; 
         cin >> num2  ;
