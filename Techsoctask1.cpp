@@ -37,14 +37,14 @@ int main()
         cout << "Operation to be performed is subtraction." << endl; 
         cout << " Enter the number from which we have to subtract: " << endl ; 
         cin >> num1  ;
-        cout << " Enter the number to be subtracted : " << endl ; 
+        cout << "Enter the number to be subtracted : " << endl ; 
         cin >> num2  ;
         cout << num1 << " - "<< num2 << " = " << num1 - num2 << endl ;       
     }
     else if(choice == 3)
     {
         cout << "Operation to be performed is multiplication." << endl; 
-        cout << " Enter the two numbers : " << endl ; 
+        cout << "Enter the two numbers : " << endl ; 
         cin >> num1 >> num2 ;
         cout << "The product of " << num1 << " and " << num2 << " is : " << num1 * num2 << endl ;    
     }
