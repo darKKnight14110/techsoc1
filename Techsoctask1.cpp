@@ -35,16 +35,16 @@ int main()
     else if(choice == 2)
     {
         cout << "Operation to be performed is subtraction." << endl; 
-        cout << "Enter the number from which we have to subtract: " << endl ; 
+        cout << " Enter the number from which we have to subtract: " << endl ; 
         cin >> num1  ;
-        cout << "Enter the number to be subtracted : " << endl ; 
+        cout << " Enter the number to be subtracted : " << endl ; 
         cin >> num2  ;
         cout << num1 << " - "<< num2 << " = " << num1 - num2 << endl ;       
     }
     else if(choice == 3)
     {
         cout << "Operation to be performed is multiplication." << endl; 
-        cout << "Enter the two numbers : " << endl ; 
+        cout << " Enter the two numbers : " << endl ; 
         cin >> num1 >> num2 ;
         cout << "The product of " << num1 << " and " << num2 << " is : " << num1 * num2 << endl ;    
     }
@@ -73,16 +73,16 @@ int main()
     }
     else if(choice == 6)
     {
-        int deg , choice2 ; 
+        int deg ,deg2  , choice2 ; 
         
         cout << "Which trigonometric function do you want to perform: " << endl << "1- Sine function" << endl << "2- Cosine function" << endl << "3- Tangent function" << endl ;
         cin >> choice2 ;
         cout << "Enter the angle(in degrees):" << endl ;
         cin >> deg ;
         if(deg >180) {
-        deg -= 180 ;
+        deg2= deg -  180 ;
         }
-        double rad = (deg*3.142)/180 ;
+        double rad = (deg2*3.142)/180 ;
         double sum = 0;
         if( choice2 == 1)
              {   
@@ -94,7 +94,7 @@ int main()
                 {
                     sum -= expon(rad ,i ) / fact (i);
                 }
-                cout << "The sine of " << deg<< " is  \n " << sum ;
+                cout << "The sine of " << deg2<< " is  \n-" << sum ;
             }
             else if( choice2 == 2)
             {
@@ -155,4 +155,4 @@ int main()
     cout << " Thank you !" << endl ;
     }
     }
-}
+} 
