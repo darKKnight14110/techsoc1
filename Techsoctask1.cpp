@@ -93,7 +93,7 @@ int main()
                 {
                     sum -= expon(rad ,i ) / fact (i);
                 }
-                cout << "The sine of " << deg<< " is  \n" << sum ;
+                cout << "The sine of " << deg<< " is  \n" << sum << endl ;
             }
             else if( choice2 == 2)
             {
@@ -106,7 +106,7 @@ int main()
                 {
                     sum -= expon(rad ,i ) / fact (i);
                 } 
-                cout << "The cosine of" << deg << "is " << sum ;
+                cout << "The cosine of" << deg << "is " << sum << endl ;
             }
             else if( choice2 == 3)
             {
