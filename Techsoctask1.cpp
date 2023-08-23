@@ -70,7 +70,6 @@ int main()
         for ( int i =1 ; i <= num2 ; ++i)
         {  expo =  expo*num1 ;}        
         cout << num1 << " raised to "<< num2 << " = " << expo << endl; 
-    }
     else if(choice == 6)
     {
         int deg ,deg2  , choice2 ; 
@@ -80,9 +79,9 @@ int main()
         cout << "Enter the angle(in degrees):" << endl ;
         cin >> deg ;
         if(deg >180) {
-        deg2= deg -  180 ;
+        deg= deg -  180 ;
         }
-        double rad = (deg2*3.142)/180 ;
+        double rad = (deg*3.142)/180 ;
         double sum = 0;
         if( choice2 == 1)
              {   
@@ -155,4 +154,4 @@ int main()
     cout << " Thank you !" << endl ;
     }
     }
-} 
+}
