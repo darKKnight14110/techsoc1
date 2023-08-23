@@ -94,7 +94,7 @@ int main()
                 {
                     sum -= expon(rad ,i ) / fact (i);
                 }
-                cout << "The sine of " << deg2<< " is  \n-" << sum ;
+                cout << "The sine of " << deg<< " is  \n" << sum ;
             }
             else if( choice2 == 2)
             {
