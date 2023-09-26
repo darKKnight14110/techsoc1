@@ -45,13 +45,15 @@ void Bank::create()
 
     }
     void Bank::login(int x)
-    {
-        int bal , pi , acc;
+    {   
+        Bank y;
+        int bal , pi , acc ,t;
         fstream fin;
         fstream fine;
         fin.open("Record.csv",ios::in);
         fine.open("AccountNo.csv", ios::in);
         string word , line , acc_n , no;
+        vector<string> r2;
         while(!fine.eof())
         {
             //row.clear();
@@ -61,7 +63,16 @@ void Bank::create()
             {
                 acc_no.push_back(no);
             }             
-            acc = stoi(acc_no.back()); 
+            int u = acc_no.size();
+            for(int i=1;i<=u;i++)
+            {
+                if(stoi(acc_no[i])==x)
+                {
+                    t = i;
+                    acc = x;
+                    break;
+                }
+            } 
             acc_no.clear();
         }
         while(!fin.eof())    
@@ -75,19 +86,19 @@ void Bank::create()
             }
             bal = stoi(row[3]);
             pi = stoi(row[2]);
-        }   
-        if(x == acc)
-            {
+         
+            
                 int p;
                 cout << "Enter the pin : " << endl ;
                 cin >> p;
             if ( pi == p)
             {
             int ch , e=0;
-            cout << "You have successfully logged in to the account....\n\n ";
+            
+            cout << "You have successfully logged in to the account....\n\n\n";
             cout << "MENU: \n\n" ;
             do{
-            cout << "1 - Display details \n2-Deposit money \n3-Withdraw money \n4-Check predicted amount \n5-EXIT \n Enter your choice: ";
+            cout << "1 -Display details \n2-Deposit money \n3-Withdraw money \n4-Check predicted amount \n5-EXIT \n\nEnter your choice: ";
             cin >>  ch;
             switch(ch)
             {
@@ -104,6 +115,7 @@ void Bank::create()
                 cin>> d;
                 bal += d;
                 cout << "New Balance: " << bal << "\n\n";
+                row[3] = bal ;
                 break ;}
                 
                 case 3:{
@@ -113,6 +125,7 @@ void Bank::create()
                 if(bal >= w){
                 bal -= w;
                 cout << "New Balance: " << bal << endl;}
+
                 else{
                     cout << "Amount larger than " << bal << " cannot be withdrawn...\n\n" ;
                 }
@@ -137,11 +150,35 @@ void Bank::create()
                 cout << "Wrong choice entered ....\n" << endl;
             }
             }while(e!=1);
-        }
-        else
-        cout << "Wrong pin entered....\n\n";
             }
+            else
+                cout << "Wrong pin entered....\n\n";
+            }
+        ifstream f("Record.csv");
+        ofstream fu("Record.csv");
+        while(!f.eof())
+        {
+        r2.clear();
+        string arr[4];
+        
+        getline(fin , line) ;
+        stringstream sb(line);
+        while(getline(sb,word , ','))
+            {
+                r2.push_back(word);
+            }
+        copy(r2.begin(),r2.end(),arr);
+        if(x!=acc)
+        {
+            for(int i=1; i<=4 ; i++) 
+            fu << arr[i] << "," ;
+            fu << endl;
+        }
+        if(x==acc)
+            fu << acc << arr[1] << pin << bal << endl ;
+        }
     }
+  
     
 int main()
 {
